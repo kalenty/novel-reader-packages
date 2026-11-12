@@ -2,6 +2,23 @@
 
 This repository distributes signed Android ARM64 packages. Application source code remains private. The initial **testing** channel is available; device installation and legacy upgrade acceptance remain pending. Prerelease application versions enter testing automatically. Stable is created only when the maintainer submits a non-prerelease version after acceptance; no current stable release is implied.
 
+## Termux 一键安装与更新
+
+适用于标准 Termux 的 Android ARM64。在 Termux 执行这一条命令即可：
+
+```sh
+pkg install -y curl && curl -fsSL https://raw.githubusercontent.com/kalenty/novel-reader-packages/a54357510781645da9e71a05ef53332d40075c14/install.sh | bash
+```
+
+脚本自动验证软件源公钥、配置独立软件源、安装并启动阅读器。完成后访问 **http://127.0.0.1:8080**。以后也可重新执行同一命令检查更新。
+
+升级时先下载软件包，再停止服务并备份数据；安装器自己的备份默认保留最近两份，位于 `~/.local/share/novel-reader-installer/`。安装失败不会自动覆盖数据库，日志也保存在此目录。不改动 Termux 的其他软件源。
+
+当前默认 **testing** 通道；已配置的通道会保留，不强制降级。远程脚本固定在可审查的提交，软件包仍由 APT 验签。完整安装升级与回滚尚待 Android 真机验收。
+
+<details>
+<summary>手动配置、更新与排错</summary>
+
 ## Termux 安装与更新（独立软件源）
 
 适用于标准 Termux 的 Android ARM64（`dpkg --print-architecture` 应显示 `aarch64`）。**手动安装过 `.deb` 不会自动添加软件源**；首次使用 `pkg` 更新时，需要完成下面的一次性配置。它与 Termux 国内镜像独立，不需要等待国内镜像同步。
@@ -94,6 +111,8 @@ pkg update
 - 包版本已更新而网页仍显示旧版本时，确认旧服务已经停止并重新启动。
 - 手工装过相同版本号的旧包时，APT 不按文件内容自动重装；先核对版本和 SHA256，不要盲目降级。
 - GitHub Pages 无法访问、证书或签名验证失败时，更新可能保留旧索引。保留错误输出排查网络或密钥，不要关闭 TLS/签名验证，也不要期望更换 Termux 默认镜像会同步这个独立源。
+
+</details>
 
 ## Publication and limits
 
