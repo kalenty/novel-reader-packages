@@ -1,0 +1,14 @@
+name: Installer checks
+on:
+  push:
+    paths: ['install.sh', 'test_installer.py', '.github/workflows/installer.yml']
+  pull_request:
+    paths: ['install.sh', 'test_installer.py', '.github/workflows/installer.yml']
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - run: bash -n install.sh && python3 -m unittest -q test_installer.py test_deploy.py
