@@ -1,7 +1,13 @@
 {
-  "tag": "testing-0.17.24-rc1-81ac99f08131",
-  "sha256": "7044e10957ea459dd2257db3e023ff5c03179c7d0d482a3825c488d61ef7b970",
+  "tag": "testing-0.18.5-rc1-d7ddb274f9a3",
+  "sha256": "1883581827da56c182f769b048ce72f8117944dd1c47f8e534a318c25691f12d",
   "primaryFingerprint": "4A5257DA36C1DD201DD5725A7D02DF8EE817027D",
   "channel": "testing",
-  "applicationVersion": "0.17.24-rc1"
+  "applicationVersion": "0.18.5-rc1",
+  "sourceSha256": "7e6e54482473726f2468a310b3130e5707eb06febc6e7cfedc69265950382d40",
+  "sourceCommit": "d7ddb274f9a32034398db2fa9297bb866d01170f",
+  "packageSha256": "c43109dabe3532bd88662e00f0b462c35deed446d645832c3966467dbf3c9e3d",
+  "packageVersion": "0.18.5~rc1",
+  "sourceBundleSha256": "26066de3d3c265e8b721090bebc704047c110630c4fd027e589c0cb00f77cd19",
+  "inboxCommit": "bf11a2c0cd1ef462037907d9c24ad3ec7c0f3ff6"
 }
