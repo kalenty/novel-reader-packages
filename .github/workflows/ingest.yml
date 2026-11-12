@@ -1,0 +1,11 @@
+name: APT inbox
+on:
+  push:
+    branches: [apt-incoming]
+permissions:
+  contents: read
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Signed APT bundle submitted; trusted main verifies it before publication'
