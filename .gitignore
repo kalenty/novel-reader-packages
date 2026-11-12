@@ -1,0 +1,5 @@
+.local/
+site/
+*.tar.gz
+*.deb
+__pycache__/
