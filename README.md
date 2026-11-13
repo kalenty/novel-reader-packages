@@ -10,7 +10,7 @@ This repository distributes signed Android ARM64 packages. Application source co
 pkg install -y curl && curl -fsSL https://raw.githubusercontent.com/kalenty/novel-reader-packages/a54357510781645da9e71a05ef53332d40075c14/install.sh | bash
 ```
 
-脚本自动验证软件源公钥、配置独立软件源、安装并启动阅读器。完成后访问 **http://127.0.0.1:8080**。以后也可重新执行同一命令检查更新。
+脚本自动验证软件源公钥、配置独立软件源、安装并启动阅读器。完成后可[打开阅读器](http://127.0.0.1:8080/)。以后也可重新执行同一命令检查更新。
 
 升级时先下载软件包，再停止服务并备份数据；安装器自己的备份默认保留最近两份，位于 `~/.local/share/novel-reader-installer/`。安装失败不会自动覆盖数据库，日志也保存在此目录。不改动 Termux 的其他软件源。
 
@@ -79,7 +79,7 @@ novel-reader version
 novel-reader start
 ```
 
-浏览器打开 http://127.0.0.1:8080 。首次运行创建管理员账号，没有预设密码。
+浏览器打开[本地阅读器](http://127.0.0.1:8080/)。首次运行创建管理员账号，没有预设密码。
 
 ### 以后更新已有安装
 
